@@ -5,6 +5,7 @@ import 'package:mfarms/Add%20screen/Add.dart';
 import 'package:mfarms/history/history%20_screen.dart';
 import 'package:mfarms/home/homescreen.dart';
 import 'package:mfarms/info/info_screen.dart';
+import 'package:mfarms/profile/main_profile.dart';
 
 class navigation extends StatefulWidget {
   const navigation({super.key});
@@ -24,8 +25,7 @@ class _navigationState extends State<navigation> {
         const Add(),
     info_screen(),
     
-    const Text('calender',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    main_profile()
   ];
   @override
   Widget build(BuildContext context) {
