@@ -11,7 +11,7 @@ Widget diseases_child() {
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Text('Diseases'),
-      Text('3'),
+       Text('3' , style: TextStyle(fontFamily: 'Poppins' , color: Colors.blue , fontSize: 40 , fontWeight: FontWeight.w600),),
       dropdown()
     ],
   );

@@ -11,7 +11,7 @@ Widget baie_child() {
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Text('Babies'),
-      Text('4'),
+       Text('4' , style: TextStyle(fontFamily: 'Poppins' , color: Colors.blue , fontSize: 40 , fontWeight: FontWeight.w600),),
       dropdown()
     ],
   );

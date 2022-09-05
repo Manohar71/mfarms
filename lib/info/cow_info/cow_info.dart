@@ -18,25 +18,48 @@ class _cow_infoState extends State<cow_info> {
     return Scaffold(
       body: ListView(children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(0,50,0,0),
-          child: blue_box(child: Center(child: Text('data' , style: TextStyle(color: Colors.white , fontSize: 20),)), color: Colors.blue, height: 40, width: 150 ),
+          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.arrow_back)),
+              blue_box(
+                  color: Colors.blue,
+                  height: 40,
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  child: const Center(
+                      child: Text(
+                    'data',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ))),
+              IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.edit)),
+            ],
+          ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(10.0,30,0,0),
+          padding: const EdgeInsets.fromLTRB(10.0, 30, 0, 0),
           child: recent_cow_info(),
         ),
-      Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: pregnancy(),
-      ),
-      Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: babies(),
-      ),
-       Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: diseases(),
-      )
+        Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: pregnancy(),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: babies(),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: diseases(),
+        )
       ]),
     );
   }
