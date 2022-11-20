@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:mfarms/history/history_data.dart';
 import 'package:mfarms/ui%20widgets/neobox.dart';
 
@@ -20,7 +21,7 @@ class _history_screenState extends State<history_screen> {
         itemBuilder: ((context, index) => Padding(
           padding: const EdgeInsets.all(10.0),
           child: neobox(
-                height: 160,
+                height: 170,
                 width: 5000,
                 child: Child_widget(context , index),
                 color: Colors.white,
@@ -35,9 +36,27 @@ class _history_screenState extends State<history_screen> {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
-        padding: const EdgeInsets.all(10.0),
-         child: Text(historydata[index]["date"].toString()),
-     //   child: Text((DateFormat.yMMMd().format(DateTime.now()))),
+        padding: const EdgeInsets.fromLTRB(10.0,10,0,0),
+        child: Container(
+          height: 40,
+          width: MediaQuery.of(context).size.width*0.4,
+          decoration: BoxDecoration(
+            color: Color.fromARGB(196, 33, 149, 243),
+            borderRadius: BorderRadius.circular(60)
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            //  child: Text(historydata[index]["date"].toString()),
+            
+           child: Row(
+             children: [
+               Text((DateFormat.yMMMd().format(historydata[index]["date"])) , style: TextStyle(fontWeight: FontWeight.w500),),
+               SizedBox(width: 5,),
+               Icon(Icons.nightlight_round_outlined , color: Colors.white,)
+             ],
+           ),
+          ),
+        ),
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
