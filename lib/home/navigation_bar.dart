@@ -34,6 +34,7 @@ class _navigationState extends State<navigation> {
       extendBody: true,
       body: _widgetOptions.elementAt(index),
       bottomNavigationBar: CurvedNavigationBar(
+        height: 60,
         color: Color.fromARGB(255, 38, 151, 255),
         buttonBackgroundColor: Color.fromARGB(255, 38, 151, 255),
         backgroundColor: Colors.transparent,

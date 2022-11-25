@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:mfarms/screnn_measures.dart';
 import 'package:mfarms/ui%20widgets/blue_box.dart';
 import 'package:mfarms/ui%20widgets/neobox.dart';
 
@@ -18,49 +19,52 @@ class _homeState extends State<home> {
     var items = ['milk', 'fat'];
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.05,
-          ),
-          Image.asset('assets/logo.png'),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(40.0, 10, 40, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Todays milk Update',
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 18),
-                ),
-                const Spacer(),
-                Container(
-                  height: 8,
-                  width: 50,
-                  decoration: BoxDecoration(
-                      color: milkupdate ? Colors.green : Colors.red,
-                      borderRadius: BorderRadius.circular(10)),
-                )
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.01,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
-            child: blue_box(
-                color: Colors.blue,
-                height: MediaQuery.of(context).size.height * 0.4,
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: Child_widget(Choosevalue, items)),
-          ),
-           Padding(
-             padding: const EdgeInsets.fromLTRB(10,20,10,0),
-             child: neobox(child: child_widget(), color: Colors.white, height: 160, width: 500),
-           )
-        ],
+            Image.asset('assets/logo.png'),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(40.0, 10, 40, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Todays milk Update',
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18),
+                  ),
+                  const Spacer(),
+                  Container(
+                    height: 8,
+                    width: 50,
+                    decoration: BoxDecoration(
+                        color: milkupdate ? Colors.green : Colors.red,
+                        borderRadius: BorderRadius.circular(10)),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+              child: blue_box(
+                  color: Colors.blue,
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: Child_widget(Choosevalue, items)),
+            ),
+             Padding(
+               padding: const EdgeInsets.fromLTRB(10,20,10,100),
+               child: neobox(child: child_widget(), color: Color.fromARGB(255, 255, 255, 255), height: screenHeight(context)*0.35, width: 500),
+             ),
+             
+          ],
+        ),
       ),
     );
   }
@@ -74,7 +78,7 @@ class _homeState extends State<home> {
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
                   height: 40,
-                  width: 100,
+                  width:100,
                   decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       color: Colors.white,
